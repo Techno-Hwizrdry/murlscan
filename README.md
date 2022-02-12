@@ -19,22 +19,28 @@ setup_virtualenv.sh will set murlscan as the virtual environment, activate it, a
 
 ### MurlScan Config File
 Set APIKEY in murlscan.conf to your IP Quality Score API key.
+
 STRICTNESS can be either 0, 1, or 2.  Stricter checks may provide a higher false-positive rate. It is recommend to defaulting to level "0", the lowest strictness setting, and increasing to "1" or "2" depending on your levels of abuse.
 
 ## Usage
 To scan a single URL:
+
 `python3 murlscan.py -u https://example.com`
 
 To scan multiple URLs:
+
 `python3 murlscan.py -i urls.txt`
 
 Your input text file should list 1 URL per line.
 
 To output the results with all their fields to a csv file:
+
 `python3 murlscan.py -i urls.txt -o output.csv`
 
 murlscan.py will use ./murlscan.conf by default, but you can specify a different filepath if it's located elsewhere:
+
 `python3 murlscan.py -i urls.txt -c path/to/murlscan.conf`
 
 Help:
+
 `python murlscan.py -h`
