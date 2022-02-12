@@ -70,7 +70,7 @@ def main():
     infile = opts.input_filepath
     
     if not infile and not opts.url:
-        msg = "Error: No URL or list of URLs provided.\nFor help, run:  'python3 murlscan.py --help'"
+        msg = f"Error: No URL or list of URLs provided.\nFor help, run:  'python3 {sys.argv[0]} --help'"
         print_and_exit(msg)
 
     config_file = opts.conf_filepath
