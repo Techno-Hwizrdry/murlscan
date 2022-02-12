@@ -64,6 +64,7 @@ def write_csv(murl, urls, filename):
             writer = DictWriter(csvfile, fieldnames=field_names)
             if count == 1: writer.writeheader()
             writer.writerow(murl.results)
+            print('.', end='', flush=True)
 
 def main():
     opts = get_args()
@@ -87,9 +88,9 @@ def main():
         if not opts.output_filepath:
             print_results(murl, urls)
         else:
-            print(f'Writing to {opts.output_filepath} ...')
+            print(f'Writing to {opts.output_filepath} ', end='')
             write_csv(murl, urls, opts.output_filepath)
-            print("Done!")
+            print("\nDone!")
     except KeyError as e:
         print(f"Error: {e.args[0]} section missing from config file '{config_file}'.")
     except FileNotFoundError as e:
