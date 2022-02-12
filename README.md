@@ -1,5 +1,5 @@
 # MurlScan
-A Python 3 script that detects suspicious URLs.
+A Python 3 script that detects malicious URLs.
 
 ## Prerequisites
 This module requires python3 (version 3.6 or later) and python3-pip.
