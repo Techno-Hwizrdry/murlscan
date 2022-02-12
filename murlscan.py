@@ -84,7 +84,7 @@ def main():
 
         murl = get_data(config)
 
-        if opts.url:
+        if not outfile:
             print_results(murl, urls)
         else:
             print(f'Writing to {opts.output_filepath} ...')
