@@ -41,6 +41,10 @@ murlscan.py will use ./murlscan.conf by default, but you can specify a different
 
 `python3 murlscan.py -i urls.txt -c path/to/murlscan.conf`
 
+When printing to standard output, you can print the text in a colorful gradient with -r:
+
+`python3 murlscan.py -i urls.txt -r`
+
 Help:
 
 `python murlscan.py -h`
