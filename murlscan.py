@@ -58,10 +58,6 @@ def _print(text, rainbow=False):
     else:
         print(text)
 
-    #colors = colored.names[19:230]
-    #colored_chars = [random.choice(colors) + char for char in text]
-    #print(''.join(colored_chars))
-
 def print_results(murl, urls, rainbow_print):
     for url in urls:
         murl.fetch(url)

@@ -9,6 +9,7 @@ from urllib.parse import quote_plus
 from rainbowprint import rprint
 
 DOES_NOT_EXIST = -999
+NA = 'N/A'
 
 class MalURL:
     def __init__(self, apikey, strictness=0):
@@ -127,7 +128,7 @@ class MalURL:
         None.
         """
         s = self._get('server')
-        return s if s else 'N/A'
+        return s if s else NA
 
     def content_type(self):
         """
@@ -140,7 +141,7 @@ class MalURL:
         None.
         """
         ct = self._get('content_type')
-        return ct if ct else 'N/A'
+        return ct if ct else NA
 
     def risk_score(self):
         """
@@ -285,7 +286,7 @@ class MalURL:
         None.
         """
         cat = self._get('category')
-        return cat if cat else 'N/A'
+        return cat if cat else NA
 
     def domain_age(self):
         """
