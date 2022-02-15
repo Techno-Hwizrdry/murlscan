@@ -1,3 +1,6 @@
+# Copyright: 2022, Alexan Mardigian
+__version__ = "1.0.0"
+
 from colored import attr, fg, names, stylize
 from colour import Color
 import random
