@@ -1,7 +1,6 @@
 # Copyright: 2022, Alexan Mardigian
 __version__ = "1.0.0"
 
-from colored import attr, fg, names, stylize
 import json
 import requests
 from validators import ValidationFailure, url as validate_url
