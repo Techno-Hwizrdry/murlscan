@@ -29,18 +29,19 @@ class MalURL:
         url: string
         """
         if not self._is_valid_url(url):
-            self.results = {
-                "success": False,
-                "message": f"Invalid url {url}"
-            }
+            self.results = self._no_results(404, "Invalid url {url}")
             return
 
         BASE = 'https://www.ipqualityscore.com/api/json/url'
         encoded_url = quote_plus(url)
         api_url = f'{BASE}/{self.apikey}/{encoded_url}?{self.strictness}'
 
-        response = requests.get(api_url)
-        self.results = json.loads(response.content.decode('utf-8'))
+        try:
+            response = requests.get(api_url)
+            self.results = json.loads(response.content.decode('utf-8'))
+        except requests.exceptions.ConnectionError:
+            msg = "Failed to establish connection to IP Quality Score API."
+            self.results = self._no_results(503, msg)
 
     def _print(self, text, rainbow):
         if rainbow:
@@ -356,3 +357,10 @@ class MalURL:
             return False
 
         return is_valid
+
+    def _no_results(self, status_code, message):
+        return {
+            "success": False,
+            "message": message,
+            "status_code": status_code
+        }
