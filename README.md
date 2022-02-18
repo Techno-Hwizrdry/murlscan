@@ -8,7 +8,7 @@ These prerequisites can be installed on a Debian based linux machine, like so:
 
 `sudo apt-get install python3 python3-pip`
 
-You will also need an API key from IP Quality Score to use this module.  You can sign up for one [here.](https://www.ipqualityscore.com/create-account)
+You will also need an API key from IP Quality Score to use this script.  You can sign up for one [here.](https://www.ipqualityscore.com/create-account)
 
 ## Setup
 Once those prerequisites have been installed, git clone this repo, cd into it, and set up the virtual environment:
