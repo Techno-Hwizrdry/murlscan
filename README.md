@@ -15,12 +15,27 @@ Once those prerequisites have been installed, git clone this repo, cd into it, a
 
 `cd /path/to/murlscan && ./setup_virtualenv.sh`
 
-setup_virtualenv.sh will set murlscan as the virtual environment, activate it, and call pip3 to download and install all the python3 dependencies for this script.  These dependencies are listed in requirements.txt.
+If you are running this on Windows, use the powershell script (setup_virtualenv.ps1) instead.
+
+setup_virtualenv will set murlscan as the virtual environment, activate it, and call pip3 to download and install all the python3 dependencies for this script.  These dependencies are listed in requirements.txt.
 
 ### MurlScan Config File
 Set APIKEY in murlscan.conf to your IP Quality Score API key.
 
 STRICTNESS can be either 0, 1, or 2.  Stricter checks may provide a higher false-positive rate. It is recommend to defaulting to level "0", the lowest strictness setting, and increasing to "1" or "2" depending on your levels of abuse.
+
+### Running in a virtualenv
+Before running the murlscan.py script, activate the virtualenv in Unix like so:
+
+`source bin/activate`
+
+In windows powershell:
+
+`.\Scripts\activate`
+
+When finished, feel free to deactivate the virtualenv like so:
+
+`deactivate`
 
 ## Usage
 To scan a single URL:
